@@ -30,6 +30,9 @@ const App = () => {
     <button onClick={() => setNeutral(neutral + 1)}>Neutral</button>
     <button onClick={() => setBad(bad + 1)}>Bad</button>
 
+
+    <h2>Statistics</h2>
+    {totalFeedback > 0 ? ( 
     <Statistics
     good={good}
     neutral={neutral}
@@ -38,6 +41,9 @@ const App = () => {
     averageScore={averageScore}
     positivePercentage={positivePercentage}
     />
+    ) : (
+      <p>No feedback given</p>
+    )}
     </div>
   );
 };
