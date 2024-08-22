@@ -6,9 +6,10 @@ const Button = ({ onClick, text }) => {
 
 const StatisticLine = ({ text, value }) => {
   return ( 
-  <p>
-    {text}: {value}
-  </p>
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
   );
 };
 
@@ -17,16 +18,17 @@ const Statistics = ({ good, neutral, bad, totalFeedback, averageScore, positiveP
     return <p>No feedback given</p>;
   }
   
-
   return (
-    <div>
+    <table>
+      <tbody>
       <StatisticLine text="Good" value={good} />
       <StatisticLine text="Neutral" value={neutral} />
       <StatisticLine text="Bad" value={bad} />
       <StatisticLine text="Total feedback" value={totalFeedback} />
       <StatisticLine text="Average score" value={averageScore.toFixed(1)} />
       <StatisticLine text="Positive feeback" value={`${positivePercentage.toFixed(1)}%`} />
-    </div>
+      </tbody>
+    </table>
   );
 };
 
